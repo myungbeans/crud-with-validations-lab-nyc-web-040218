@@ -1,0 +1,8 @@
+<h1><%=@song.title%></h1>
+<%@song.attributes.map do |attr, val|%>
+<p><%= "#{attr}: #{val}"%></p>
+<%end%>
+
+
+<%= link_to 'Edit', edit_song_path(@song)%>
+<%= link_to 'Delete', songs_path, method: :delete, data: {confirm: "are you sure?"} %>
